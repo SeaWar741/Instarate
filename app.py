@@ -27,13 +27,9 @@ def predict(image, model):
 
 def predicting(image_in):
     device = torch.device("cpu")
-    #parser = argparse.ArgumentParser()
-    #parser.add_argument('--image_path', type=str, default=image_in)
-    #config = parser.parse_args()
     image = Image.open(image_in)
     model = torchvision.models.resnet50()
     model.to(device)
-    # model.avgpool = nn.AdaptiveAvgPool2d(1) # for any size of the input
     model.fc = torch.nn.Linear(in_features=2048, out_features=1)
     model.load_state_dict(torch.load('model/model-resnet50.pth')) 
     model.eval()
