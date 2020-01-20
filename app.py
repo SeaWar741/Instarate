@@ -23,14 +23,14 @@ def predict(image, model):
     with torch.no_grad():
         preds = model(image)
     score = preds.detach().numpy().item()
-    print('Popularity score: '+str(round(score,2)))
+    return('Popularity score: '+str(round(score,2)))
 
 def predicting(image_in):
     device = torch.device("cpu")
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--image_path', type=str, default=image_in)
-    config = parser.parse_args()
-    image = Image.open(config.image_path)
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument('--image_path', type=str, default=image_in)
+    #config = parser.parse_args()
+    image = Image.open(image_in)
     model = torchvision.models.resnet50()
     model.to(device)
     # model.avgpool = nn.AdaptiveAvgPool2d(1) # for any size of the input
@@ -49,8 +49,8 @@ def hello_world():
             print('file not uploaded')
             return
         file = request.files['file']
-        image = file.read()
-        category,flower_name = predicting(image)
+        image = file
+        flower_name = predicting(image)
         return render_template('result.html',flower = flower_name)
 
 if __name__ == '__main__':
