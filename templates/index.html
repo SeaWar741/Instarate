@@ -13,21 +13,39 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
   <!--Font-->
   <link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+	    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	    background-size: 400% 400%;
+	    animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+  </style>
 </head>
 <body>
     <!-- As a heading -->
-    <nav class="navbar navbar-light blue">
+    <nav class="navbar navbar-dark" style="background-color:#97DCDF">
         <span class="navbar-brand">
-            <a style="font-weight:bold">
+            <a style="font-weight:bolder">
                 <h1>Instarate</h1>
             </a>
         </span>
     </nav>
     <div class="container w-responsive" style="margin-top: 5rem;margin-bottom: 5rem;max-width:40rem;heigh:auto;object-fit:cover;margin-left:auto;margin-right:auto">
         <!-- Card -->
-        <div class="card">
+        <div class="card" style="border-radius:5%">
         <!-- Card image -->
-        <img class="card-img-top img-fluid" src="https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif" alt="Responsive image" id="target">
+        <img class="card-img-top img-fluid" src="https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif" alt="Responsive image" id="target" style="border-top-right-radius:5%;border-top-left-radius:5%">
         <!-- Card content -->
         <div class="card-body">
             <!-- Title -->
@@ -45,7 +63,7 @@
                     </div>
                 </div>
                 <div class="container align-content-center text-center" style="padding:1.5rem">
-                    <input class="btn btn-danger" type="submit" value="upload">
+                    <input class="btn btn-danger" type="submit" value="upload" style="border-radius:5%">
                 </div>
         </div>
 
