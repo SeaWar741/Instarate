@@ -1,1 +1,1 @@
-web: gunicorn app:Instarate
+web: gunicorn app:app
