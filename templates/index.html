@@ -18,30 +18,41 @@
     <!-- As a heading -->
     <nav class="navbar navbar-light blue">
         <span class="navbar-brand">
-            <a style="font-family: 'Poller One'">
+            <a style="font-weight:bold">
                 <h1>Instarate</h1>
             </a>
         </span>
     </nav>
-    <div class="container" style="margin-top: 5rem;">
+    <div class="container w-responsive" style="margin-top: 5rem;margin-bottom: 5rem;max-width:40rem;heigh:auto;object-fit:cover;margin-left:auto;margin-right:auto">
         <!-- Card -->
         <div class="card">
-            <div class="container" style="margin:5rem">
-                <form method ='post' enctype=multipart/form-data>
+        <!-- Card image -->
+        <img class="card-img-top img-fluid" src="https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif" alt="Responsive image" id="target">
+        <!-- Card content -->
+        <div class="card-body">
+            <!-- Title -->
+            <h4 class="card-title" style="padding-bottom:1.5rem"><a>Know your potential image popularity</a></h4>
+            <!-- Text -->
+             <form method ='post' enctype=multipart/form-data>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                     </div>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        <input type="file" class="custom-file-input" id="src"
                         aria-describedby="inputGroupFileAddon01" name="file">
                         <label class="custom-file-label" for="inputGroupFile01" >Choose file</label>
                     </div>
                 </div>
-                <input class="btn btn-danger" type="submit" value="upload">
-            </div>
+                <div class="container align-content-center text-center" style="padding:1.5rem">
+                    <input class="btn btn-danger" type="submit" value="upload">
+                </div>
+        </div>
+
         </div>
         <!-- Card -->
+
+
     </div>
     
 
@@ -53,6 +64,21 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!--Scripts-->
+    <script>
+        function showImage(src,target) {
+        var fr=new FileReader();
+        // when image is loaded, set the src of the image where you want to display it
+        fr.onload = function(e) { target.src = this.result; };
+        src.addEventListener("change",function() {
+            // fill fr with image data    
+            fr.readAsDataURL(src.files[0]);
+        });
+        }
 
+        var src = document.getElementById("src");
+        var target = document.getElementById("target");
+        showImage(src,target);
+    </script>
 </body>
 </html>
