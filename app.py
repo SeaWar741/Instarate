@@ -31,7 +31,7 @@ def predicting(image_in):
     model = torchvision.models.resnet50()
     model.to(device)
     model.fc = torch.nn.Linear(in_features=2048, out_features=1)
-    model.load_state_dict(torch.load('model/model-resnet50.pth',map_location='cuda:0')) 
+    model.load_state_dict(torch.load('model/model-resnet50.pth',map_location=torch.device('cpu'))) 
     model.eval()
     return predict(image, model)
 
