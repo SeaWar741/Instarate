@@ -23,7 +23,7 @@ def predict(image, model):
     with torch.no_grad():
         preds = model(image)
     score = preds.detach().numpy().item()
-    return('Popularity score: '+str(round(score,2)))
+    return(str(round(score,2))+"/10")
 
 def predicting(image_in):
     device = torch.device("cpu")
