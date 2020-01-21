@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="128x128" href="https://raw.githubusercontent.com/SeaWar741/Instarate/master/templates/img/favicon.png">
+  <link rel="icon" sizes="192x192"  href="https://raw.githubusercontent.com/SeaWar741/Instarate/master/templates/img/favicon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <title>Instarate</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -13,6 +17,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
   <!--Font-->
   <link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
         color:white;
@@ -34,11 +39,62 @@
   </style>
 </head>
 <body id="body">
-    <div class="row h-100" style="width:100%; height:100%;padding-top:30%">
+    <!-- As a heading -->
+    <nav class="navbar" style="background-color:white;color:black;">
+        <span class="navbar-brand">
+            <a class="navbar-brand" href="#">
+                <img src="https://github.com/SeaWar741/Instarate/blob/master/templates/img/logo.png?raw=true" height="75px" alt="mdb logo">
+            </a>
+        </span>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalConfirmDelete" style="border-radius:5%">
+            About
+        </button>   
+    </nav>
+     <div class="container w-responsive" style="margin-top: 5rem;margin-bottom: 5rem;max-width:40rem;heigh:auto;object-fit:cover;margin-left:auto;margin-right:auto">
         <div class="text-center" style="margin-left:auto;margin-right:auto;">
-            <h1 style="font-weight:bold">Potential popularity:<p><font color="red">{{flower}}</font></p></h1>
+            <div class="card">
+                <div class="card-body">
+                    <h1 style="font-weight:bold;color:black">Potential popularity:<p><font color="red">{{flower}}</font></p></h1>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!--Modal: modalConfirmDelete-->
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+        <!--Header-->
+        <div class="modal-header d-flex justify-content-center">
+            <p class="heading">Developed with ♥</br>by Juan Carlos Garfias Tovar</p>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+            <div class="container" style="margin-bottom:2rem;margin-top:2rem">
+                This is a working project, eventually it might become an app
+                <br>
+                Suggestions and comments are welcome.
+                <br>
+                Enjoy and keep shooting awesome pics!
+            </div>
+            <a href='https://github.com/SeaWar741'>
+                <i class="fa fa fa-github fa-4x animated rotateIn" style="color:black"></i>
+            </a>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer flex-center">
+            <a type="button" class="btn btn-danger waves-effect" data-dismiss="modal" style="border-radius:5%">
+                <i class="fas fa fa-times"></i>
+            </a>
+        </div>
+        </div>
+        <!--/.Content-->
+    </div>
+    </div>
+    <!--Modal: modalConfirmDelete-->
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
